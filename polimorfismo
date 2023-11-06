@@ -1,0 +1,37 @@
+<?php
+
+class Carro{
+    public string $marca;  
+    public int $precio;
+
+    public function __construct($marca, $precio){
+        $this->marca = $marca;
+        $this->precio = $precio;
+    }
+
+    public function MarcaDelCoche($texto){
+        return $texto.$this->marca." ".$this->PrecioDeVenta();
+    } 
+
+    public function PrecioDeVenta(){
+        return "El precio de lanzamiento es ".$this->precio;
+    }
+}
+
+class CocheDeportivo extends Carro {
+    public function PrecioDeVenta(){
+        return "El precio de lanzamiento del coche deportivo es ".$this->precio;
+    }
+}
+
+$camioneta = new Carro("Toyota", 20000);
+echo $camioneta->MarcaDelCoche("Este coche es de marca ");
+
+echo "<br><br>";
+
+$avion = new CocheDeportivo("Ford", 50000);
+echo $avion->MarcaDelCoche("Y este coche deportivo es de marca ");
+
+
+   
+
